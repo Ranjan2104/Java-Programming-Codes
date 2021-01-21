@@ -27,7 +27,6 @@ class search
 		}
 		if(f > l)
 			System.out.println("no found item !");
-		//System.out.println("thank you for using binary search");
 	}
 
 }
