@@ -1,4 +1,4 @@
-package amreshJava;
+package Java;
 class find
 {
 	public int search(int arr[], int x)
