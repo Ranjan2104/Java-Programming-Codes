@@ -1,0 +1,23 @@
+package amreshJava;
+class find
+{
+	public int search(int arr[], int x)
+	{
+		for(int i = 0; i < arr.length; i++)
+		{
+			if(arr[i] == x)
+				return i;
+		}
+		return -1;
+	}
+}
+public class code {
+
+	public static void main(String[] args) {
+		// linear searching.
+		find l = new find();
+		int arr[] = {2,6,89,30,45,15,78,96};
+		int x = 100;
+		System.out.println(l.search(arr,x));
+	}
+} // Contributed By Amresh Ranjan.
