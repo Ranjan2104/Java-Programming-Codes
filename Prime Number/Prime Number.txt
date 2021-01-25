@@ -1,0 +1,23 @@
+package Java;
+import java.util.*;
+public class PrimeNumber {
+	int temp;
+	public static void main(String[] args) {
+		try (Scanner s = new Scanner(System.in)) {
+			System.out.println("Enter a Number");
+			int num = s.nextInt();
+			PrimeNumber pn = new PrimeNumber();
+			pn.Prime(num);
+		}
+	}
+	public void Prime(int num)
+	{
+		for(int i = 2; i < num; i++)
+			if(num % i == 0)
+				temp = temp + 1;
+		if(temp > 0)
+			System.out.println("Not Prime Number");
+		else
+			System.out.println("It is Prime Number");
+	}
+} // Contributed by Amresh Ranjan.
