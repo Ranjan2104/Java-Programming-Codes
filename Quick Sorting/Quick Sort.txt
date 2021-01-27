@@ -1,0 +1,44 @@
+package Java;
+class quickmiddlesort
+{
+	int pivot, temp, q;
+	public int divide(int arr[] ,int low, int high)
+	{
+		pivot = arr[(low + high) / 2]; // or we can choose low or high
+		while(low <= high)
+		{
+			while(arr[low] < pivot) low++;
+			while(arr[high] > pivot) high--;
+			if(low <= high)
+			{
+				temp = arr[low];
+				arr[low] = arr[high];
+				arr[high] = temp;
+				low++;
+				high--;
+			}
+		}
+		return low;
+	}
+	public void quickrecursion(int arr[], int low, int high)
+	{
+		q = divide(arr, low, high);
+		if(low < q-1) quickrecursion(arr, low, q-1);
+		if(high > q) quickrecursion(arr, q, high);
+	}
+	public void printarray(int arr[])
+	{
+		for(int i =0; i < arr.length; i++) System.out.print(arr[i] + " ");
+	}
+}
+public class QuickSort {
+	// driver code
+	public static void main(String[] args) {
+		quickmiddlesort qms = new quickmiddlesort();
+		int arr[] = {15,9,7,13,12,16,4,18,11};
+		int leng = arr.length;
+		qms.quickrecursion(arr, 0, leng-1);
+		qms.printarray(arr);
+
+	}
+} // Contributed by Amresh Ranjan.
