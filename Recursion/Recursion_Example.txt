@@ -1,0 +1,36 @@
+package Java;
+public class Recursion {
+	static int stepcount = 0;
+	public static void main(String[] args) {
+		
+		System.out.println("sum is " + sum(5));
+		stepcount =0;
+		System.out.println("power is " + pow(3,1000) + " & step is " + stepcount);
+		stepcount =0;
+		System.out.println("fastpower is " + fastpower(3,1000) + " & step is " + stepcount);
+		System.out.println("path is " + path(4,4));
+	}
+	static int sum(int n)
+	{
+		if(n==1) return 1;
+		return n + sum(n-1);
+	}
+	static int pow(int a,int b)
+	{
+		stepcount++;
+		if(b==0) return 1;
+		return a * pow(a,b-1);
+	}
+	static int fastpower(int a, int b)
+	{
+		stepcount++;
+		if(b == 0) return 1;
+		if(b % 2 == 0) return fastpower(a*a,b/2);
+		return a* fastpower(a, b-1);
+	}
+	static int path(int n, int m)
+	{
+		if(n == 1 || m == 1) return 1;
+		return path(n, m-1) + path(n-1, m);
+	}
+} // Contributed by Amresh Ranjan.
