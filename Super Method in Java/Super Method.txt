@@ -1,0 +1,30 @@
+package Java;
+
+abstract class writer {
+	public abstract void write();
+}
+class pen extends writer {
+	public void write() {
+		System.out.println("I m writing");
+	}
+}
+class pencil extends writer {
+	public void write() {
+		System.out.println("I m pencil");
+	}
+}
+class kit {
+	public void dosomething(writer p) {
+		p.write();
+	}
+}
+public class SuperMethod {
+
+	public static void main(String[] args) {
+		kit k = new kit();
+		writer p = new pen();
+		writer pc = new pencil();
+		k.dosomething(pc);
+		k.dosomething(p);
+	}
+} // Contributed by Amresh Ranjan.
