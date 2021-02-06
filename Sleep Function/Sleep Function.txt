@@ -1,0 +1,14 @@
+package javademo;
+
+public class SleepFun {
+
+	public static void main(String[] args) throws InterruptedException {
+		for(int i = 0; i < 10; i++) {
+			Thread.sleep(1000);
+			System.out.println("yo");
+			Thread.sleep(1500);
+			System.out.println(" ");
+			System.out.println("hello");
+		}
+	}
+} // Contributed by Amresh Ranjan.
