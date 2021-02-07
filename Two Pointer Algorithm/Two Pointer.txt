@@ -1,0 +1,30 @@
+package javademo;
+
+public class TwoPointer {
+
+	public static void main(String[] args) {
+		int arr[] = {-3,2,3,3,6,8,15};
+		int target = 30;
+		System.out.println(show(arr, target));
+	}
+	static boolean show(int arr[], int target) {
+		// this fun have time complexity O(n) instead of O(n^2) or O(n^3)
+		// this is optimal way of Solving by ranjan's Amresh
+		int start = 0;
+		int end = arr.length-1;
+		if(target != 0) {
+		while(start < end) {
+			int sum = arr[start] + arr[end];
+			if(sum < target) {
+				start++;
+			} else if(sum > target) {
+				end--;
+			} else {
+				return true;
+			}
+		}
+	} else System.out.println("Target is not equal to 0");
+		return false;
+		
+	}
+} // Contributed by Amresh Ranjan.
