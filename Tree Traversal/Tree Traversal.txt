@@ -1,0 +1,56 @@
+package javademo;
+
+public class TreeTraversal {
+
+	public static void main(String[] args) { // driver code 
+		BinaryTree tree = new BinaryTree();	// Time complexity is O(n) &
+		tree.root = new Node(1);				// Auxiliary Space is O(1) || O(n)
+		tree.root.left = new Node(2);
+		tree.root.right = new Node(3);
+		tree.root.left.left = new Node(4);
+		tree.root.left.right = new Node(5);
+		System.out.println(" PostOrder Traversal is:-");
+		tree.PostOrder();
+		System.out.println(" InOrder Traversal is:-");
+		tree.InOrder();
+		System.out.println(" PreOrder Traversal is:-");
+		tree.PreOrder();
+	}
+	static class Node {
+		int key;
+		Node left, right;
+		Node(int key) {
+			this.key = key;
+			left = right = null;
+		}
+	}
+	static class BinaryTree {
+		Node root;
+		BinaryTree() {
+			root = null;
+		}
+		void PostOrder(Node node) {
+			if(node == null) return;
+			PostOrder(node.left);
+			PostOrder(node.right);
+			System.out.println(node.key + " ");
+		}
+		void InOrder(Node node) {
+			if(node == null) return;
+			InOrder(node.left);
+			System.out.println(node.key + " ");
+			InOrder(node.right);
+		}
+		void PreOrder(Node node) {
+			if(node == null) return;
+			System.out.println(node.key + " ");
+			PreOrder(node.left);
+			PreOrder(node.right);
+		}
+		void PostOrder() {PostOrder(root);}
+		void InOrder() {InOrder(root);}
+		void PreOrder() {PreOrder(root);}
+	}
+} // Contributed by Amresh Ranjan.
+
+
