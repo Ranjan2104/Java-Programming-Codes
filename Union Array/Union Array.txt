@@ -1,0 +1,39 @@
+package javademo;
+
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class UnionArray {
+
+	public static void main(String[] args) {
+		try (Scanner s = new Scanner(System.in)) {
+			System.out.println("Enter 1 Array");
+			int n = s.nextInt();
+			int arr1[] = new int[n];
+			for(int i = 0; i < n; i++) {
+			    arr1[i] = s.nextInt();
+			}
+			System.out.println("Enter 2 Array");
+			int m = s.nextInt();
+			int arr2[] = new int[m];
+			for(int i = 0; i < m; i++) {
+			    arr2[i] = s.nextInt();
+			}
+			Set<Integer> NewArray = new HashSet<>();
+			Union(arr1, arr2, NewArray);
+			System.out.println("Union of Array is");
+			System.out.println(NewArray + " ");
+		}
+	}
+	static void Union(int[] arr1, int[] arr2, Set<Integer> NewArray ) {
+		int start1 = 0;
+		int start2 = 0;
+		while(start1 < arr1.length) {
+			NewArray.add(arr1[start1++]);
+		}
+		while(start2 < arr2.length) {
+			NewArray.add(arr2[start2++]);
+		}
+	}
+} // Contributed by Amresh Ranjan.
