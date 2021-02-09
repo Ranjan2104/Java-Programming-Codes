@@ -17,7 +17,7 @@ public class KadaneAlgorithm {
 				end = i;
 			}
 			if(max_ending_here < 0) {
-				max_ending_here = 0;
+				max_ending_here = 
 				s = i + 1;
 			}
 		}
