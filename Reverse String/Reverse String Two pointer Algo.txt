@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class ex {
+
+	public static void main(String[] args) {
+		try (
+		Scanner sc = new Scanner(System.in)) {
+			String s = sc.next();
+			char[] array = s.toCharArray();
+			int start = 0;
+			int end = array.length-1;
+			while(start <= end){
+			    array[start] = (char) (array[start] ^ array[end]);
+			    array[end] = (char) (array[start] ^ array[end]);
+			    array[start] = (char) (array[start] ^ array[end]);
+			    start++;
+			    end--;
+			}
+			System.out.print(String.valueOf(array));
+		}
+	}
+}
+// Complexity is O(n).
+Contributed by Amresh Ranjan.
