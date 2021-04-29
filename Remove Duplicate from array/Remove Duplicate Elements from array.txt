@@ -1,0 +1,28 @@
+import java.util.Arrays;
+import java.util.HashSet;
+
+public class remove_duplicates {
+
+	public static void main(String[] args) { 
+		int arr[] = {1,2,2,3,1,2,6,8,5};
+		int n = arr.length;
+		remove_duplicate1(arr,n);  // O(n*nlogn)
+		remove_duplicate2(arr,n);  // O(nlogn)
+	}
+	static void remove_duplicate1(int arr[],int n) {
+		int j = 0;
+		Arrays.sort(arr);
+		for(int i = 0; i < n-1; i++) {
+			if(arr[i] != arr[i+1]) arr[j++] = arr[i];
+		}
+		arr[j] = arr[n-1];
+		for(int k = 0; k < j+1; k++) System.out.print(arr[k] + " ");
+	}
+	static void remove_duplicate2(int arr[],int n) {
+		HashSet<Integer> hs = new HashSet<>();
+		for(int i = 0; i < arr.length; i++)
+			hs.add(arr[i]);
+		System.out.println(hs);
+	}
+}
+// Contributed by Amresh Ranjan.
