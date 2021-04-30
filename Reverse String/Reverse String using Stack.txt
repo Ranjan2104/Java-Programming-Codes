@@ -1,0 +1,20 @@
+import java.util.Stack;
+
+public class StringRev {
+
+	public static void main(String[] args) {
+		String s = "Amresh";
+		String st = "";
+		String sf = "";
+		Stack<String> stack = new Stack<>();
+		for(int i = s.length()-1; i >= 0; i--) {
+			sf = sf + s.charAt(i);
+			stack.push(sf);
+			while(!stack.empty()) {
+				st = stack.pop();
+			}
+		}
+		System.out.println(st);
+	}
+}
+// Contributed by Amresh Ranjan.
