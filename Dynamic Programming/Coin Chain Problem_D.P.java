@@ -43,4 +43,4 @@ public class CoinChainProblem {
 			System.out.print(x+" ");
 		}
 	}
-} // Contributed by Amresh Ranjan.
+} // Contributed by Er. Amresh Ranjan.
